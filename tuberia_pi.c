@@ -10,7 +10,7 @@ int main(){
 
 	
 	//buffer 
-	char buf[11];
+	char buf[tamBuffNum];
 	// 1 tuberia y una flag   
 	int pipefd[2];
 	int r;
@@ -43,7 +43,7 @@ int main(){
 		k = k+4;
 		}
 
-		char buf[tamBuffNum];
+		//buf[tamBuffNum];
 		gcvt(positivos, 7, buf);
 	
 		
@@ -76,13 +76,14 @@ int main(){
 		close(pipefd[0]);
 		
 		char *ptr;
-   		double ret;
+   		double pos;
 
-   		ret = strtod(buf, &ptr); 
+   		pos = strtod(buf, &ptr); 
 
-		double pi = 3 +(ret - negativos);
+		double pi = 3 +(pos - negativos);
 		printf(" --------------------- \n");
 		printf("Resultado pi %20.20f\n",pi);
+		printf(" --------------------- \n")
 		
 	}
 	
